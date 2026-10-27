@@ -14,7 +14,7 @@ services:
       DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
       STORE_MODEL_IN_DB: "True"
     volumes:
-      - ./config/config.yaml:/app/config.yaml:ro
+      # - ./config/config.yaml:/app/config.yaml:ro
       # litellm_settings.callbacks 以 config 同目錄解析模組,必須掛在 /app 下
       - ./config/custom_callbacks.py:/app/custom_callbacks.py:ro
     command: ["--config", "/app/config.yaml", "--port", "4000"]
