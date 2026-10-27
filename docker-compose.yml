@@ -15,6 +15,7 @@ services:
       STORE_MODEL_IN_DB: "True"
     volumes:
       # - ./config/config.yaml:/app/config.yaml:ro
+      - ../files/litellm/config.yaml:/app/config.yaml:ro
       # litellm_settings.callbacks 以 config 同目錄解析模組,必須掛在 /app 下
       - ./config/custom_callbacks.py:/app/custom_callbacks.py:ro
     command: ["--config", "/app/config.yaml", "--port", "4000"]
